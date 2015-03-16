@@ -10,12 +10,10 @@
 		}).when('/settings/courses', {
 			controller : 'SettingsCtrl',
 			templateUrl : 'partials/courses.html'	
-		}).when('/settings/batch', {
+		}).when('/createprescription', {
 			controller : 'SettingsCtrl',
-			templateUrl : 'partials/batch.html'	
-		}).when('/settings/subjects', {
-			controller : 'SettingsCtrl',
-			templateUrl : 'partials/subjects.html'	
+			templateUrl : 'partials/createPrescription.html'	
+			
 		}).when('/settings/std_catagory', {
 			controller : 'SettingsCtrl',
 			templateUrl : 'partials/std_catagory.html'	
