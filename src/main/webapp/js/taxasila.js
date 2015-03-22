@@ -15,7 +15,7 @@
 			templateUrl : 'partials/batch.html'	
 		}).when('/createpresc', {
 			controller : 'SettingsCtrl',
-			templateUrl : 'partials/createPrescriptions.html'	
+			templateUrl : 'partials/createPrescription.html'	
 		}).when('/settings/std_catagory', {
 			controller : 'SettingsCtrl',
 			templateUrl : 'partials/std_catagory.html'	
