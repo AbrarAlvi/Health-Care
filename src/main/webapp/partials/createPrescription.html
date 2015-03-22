@@ -1,6 +1,6 @@
         <!-- Page Content -->
         
-        <style>
+ <style>
 
   #content {
       background: #fff;
@@ -22,7 +22,7 @@
   padding: 0;
   list-style: none;
 }
-span.close{
+span.closed{
 	position:relative;
 	z-index: 9999;
 	top:0;
@@ -39,7 +39,7 @@ span.close{
     padding: 10px 7px;       
 }
 
-span.close:before {
+span.closed:before {
     content: 'x';
 }
 
@@ -83,18 +83,69 @@ span.close:before {
 }
 
 label {
-    font-size: 20px;
+    font-size: 19px;
 }
-			</style>
+
+
+.page-header {
+  
+  margin: 7px -26px 21px;
+ 
+}
+
+
+.alert {
+  ;
+  border-radius: 16px;
+}
+
+
+
+.papers {
+  background-color: rgb(236, 249, 121);
+  height: 350px;
+  padding: 20px;
+  width: 260px;
+  -webkit-box-shadow: 
+        1px 1px   0 rgba(0,   0,   0,   0.100), 
+        3px 3px   0 rgba(255, 255, 255, 1.0), 
+        4px 4px   0 rgba(0,   0,   0,   0.125), 
+        6px 6px   0 rgba(255, 255, 255, 1.0),  
+        7px 7px   0 rgba(0,   0,   0,   0.150), 
+        9px 9px   0 rgba(255, 255, 255, 1.0),  
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+  -moz-box-shadow: 
+        1px 1px   0 rgba(0,   0,   0,   0.100), 
+        3px 3px   0 rgba(255, 255, 255, 1.0), 
+        4px 4px   0 rgba(0,   0,   0,   0.125), 
+        6px 6px   0 rgba(255, 255, 255, 1.0),  
+        7px 7px   0 rgba(0,   0,   0,   0.150), 
+        9px 9px   0 rgba(255, 255, 255, 1.0),  
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+  box-shadow: 
+        1px 1px   0 rgba(0,   0,   0,   0.100), 
+        3px 3px   0 rgba(255, 255, 255, 1.0), 
+        4px 4px   0 rgba(0,   0,   0,   0.125), 
+        6px 6px   0 rgba(255, 255, 255, 1.0),  
+        7px 7px   0 rgba(0,   0,   0,   0.150), 
+        9px 9px   0 rgba(255, 255, 255, 1.0),  
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+    
+}
+
+
+
+
+</style>
 			<div id="page-wrapper">
 			
-			
-				<div class="row">
+			<div class="row">
 					<div class="col-lg-12">
 						<h4 class="page-header alert alert-success pull-center">Create
 							Prescription</h4>
 					</div>
 				</div>
+				
 				<div class="row">
 			
 					<div class="col-md-9">
@@ -124,12 +175,12 @@ label {
 			
 				<div class="row">
 			
-					<div class="col-md-9">
+					<div class="col-md-8">
 						<ul id="tabs">
-							<li><span class="close"></span><a href="#" name="#tab1">One</a></li>
-							<li><span class="close"></span><a href="#" name="#tab2">Two</a></li>
-							<li><span class="close"></span><a href="#" name="#tab3">Three</a></li>
-							<li><span class="close"></span><a href="#" name="#tab4">Four</a></li>
+							<li><span class="closed"></span><a href="#" name="#tab1">Fever</a></li>
+							<li><span class="closed"></span><a href="#" name="#tab2">Two</a></li>
+							<li><span class="closed"></span><a href="#" name="#tab3">Three</a></li>
+							<li><span class="closed"></span><a href="#" name="#tab4">Four</a></li>
 						</ul>
 			
 						<div id="content">
@@ -186,10 +237,11 @@ label {
 			
 			
 					</div>
+					
+					<div class="papers col-md-9"></div>
 					</div>
 					</div>
 				
-			
 			</div>
 <!-- /#page-wrapper -->
 
@@ -223,7 +275,7 @@ $(document).ready(function() {
         $($(this).attr('name')).fadeIn(); // Show content for current tab
         }
     });
-	 $("span.close").on("click",function(e) {
+	 $("span.closed").on("click",function(e) {
         e.preventDefault();
 		var current_tab_li = $(this).closest('li');
 		if($(current_tab_li).find('a').attr("id") == "current"){ //detection for current tab
