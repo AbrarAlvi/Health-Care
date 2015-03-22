@@ -9,6 +9,10 @@ public class ModificationDTO {
 
 	private int operation;
 
+	public ModificationDTO(){ 
+		
+	} 
+	
 	public String getName() {
 		return name;
 	}

@@ -4,7 +4,7 @@ import com.zar.hcms.command.EventLog;
 
 
 
-public interface ITaxaselaDTO {
+public interface IHCMSDTO {
 	
 	EventLog createLogEvent();
 }

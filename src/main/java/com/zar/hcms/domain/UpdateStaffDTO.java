@@ -3,7 +3,7 @@ package com.zar.hcms.domain;
 import com.zar.hcms.command.EventLog;
 
 
-public class UpdateStaffDTO implements ITaxaselaDTO {
+public class UpdateStaffDTO implements IHCMSDTO {
 
 	@Override
 	public EventLog createLogEvent() {

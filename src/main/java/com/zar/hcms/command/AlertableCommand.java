@@ -1,11 +1,13 @@
 package com.zar.hcms.command;
 
-import com.zar.hcms.domain.ITaxaselaDTO;
+import com.zar.hcms.domain.IHCMSDTO;
+
+
 
 
 public abstract class AlertableCommand extends Command {
 
-	protected AlertableCommand(ITaxaselaDTO dto) {
+	protected AlertableCommand(IHCMSDTO dto) {
 		super(dto);
 	}
 	

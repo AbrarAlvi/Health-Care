@@ -3,16 +3,17 @@ package com.zar.hcms.command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.zar.hcms.domain.ITaxaselaDTO;
+import com.zar.hcms.domain.IHCMSDTO;
+import com.zar.hcms.entities.HCMSEntity;
 
 
 
 public abstract class Command {
 	
-	ITaxaselaDTO dto;
+	HCMSEntity dto;
 	Logger logger = LoggerFactory.getLogger(Command.class);
 
-	protected Command(ITaxaselaDTO dto) {
+	protected Command(HCMSEntity dto) {
 		this.dto =  dto;
 	}
 	protected abstract void process() throws CommandExecutionException;
