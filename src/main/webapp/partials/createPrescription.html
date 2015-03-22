@@ -81,81 +81,123 @@ span.close:before {
   opacity: 1;
   filter: alpha(opacity=100);   
 }
-</style>
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="page-header alert alert-success pull-center">CreatePrescription</h4>
-                </div>
-		        <div class="col-lg-12">
-					<ul id="tabs">
-						<li><span class="close"></span><a href="#" name="#tab1">Fever</a></li>
-						<li><span class="close"></span><a href="#" name="#tab2">Cough</a></li>
-						<li><span class="close"></span><a href="#" name="#tab3">High Fever</a></li>
-						<li><span class="close"></span><a href="#" name="#tab4">Four</a></li>
-					</ul>
-		
-					<div id="content">
-						<div id="tab1">
-							<h2>Lorem ipsum sit amet</h2>
-							<p>Praesent risus nisi, iaculis nec condimentum vel, rhoncus
-								vel dolor. Aenean nisi lectus, varius nec tempus id, dapibus non
-								quam.</p>
-							<p>Suspendisse ac libero mauris. Cras lacinia porttitor urna,
-								vitae molestie libero posuere et. Mauris turpis tortor, mollis non
-								vulputate sit amet, rhoncus vitae purus.</p>
-							<h3>Pellentesque habitant</h3>
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus et
-								ultrices posuere cubilia curae.</p>
-						</div>
-						<div id="tab2">
-							<h2>Vivamus fringilla suscipit justo</h2>
-							<p>Aenean dui nulla, egestas sit amet auctor vitae, facilisis
-								id odio. Donec dictum gravida feugiat.</p>
-							<p>Class aptent taciti sociosqu ad litora torquent per conubia
-								nostra, per inceptos himenaeos. Cras pretium elit et erat
-								condimentum et volutpat lorem vehicula</p>
-		
-							<p>Morbi tincidunt pharetra orci commodo molestie. Praesent ut
-								leo nec dolor tempor eleifend.</p>
-						</div>
-						<div id="tab3">
-							<h2>Phasellus non nibh</h2>
-							<p>Non erat laoreet ullamcorper. Pellentesque magna metus,
-								feugiat eu elementum sit amet, cursus sed diam. Curabitur posuere
-								porttitor lorem, eu malesuada tortor faucibus sed.</p>
-							<h3>Duis pulvinar nibh vel urna</h3>
-							<p>Donec purus leo, porttitor eu molestie quis, porttitor sit
-								amet ipsum. Class aptent taciti sociosqu ad litora torquent per
-								conubia nostra, per inceptos himenaeos. Donec accumsan ornare elit
-								id imperdiet.</p>
-							<p>Suspendisse ac libero mauris. Cras lacinia porttitor urna,
-								vitae molestie libero posuere et.</p>
-						</div>
-						<div id="tab4">
-							<h2>Cum sociis natoque penatibus</h2>
-							<p>Magnis dis parturient montes, nascetur ridiculus mus. Nullam
-								ac massa quis nisi porta mollis venenatis sit amet urna. Ut in
-								mauris velit, sed bibendum turpis.</p>
-							<p>Nam ornare vulputate risus, id volutpat elit porttitor non.
-								In consequat nisi vel lectus dapibus sodales. Pellentesque
-								habitant morbi tristique senectus et netus et malesuada fames ac
-								turpis egestas. Praesent bibendum sagittis libero.</p>
-							<h3>Imperdiet sem interdum nec</h3>
-							<p>Mauris rhoncus tincidunt libero quis fringilla.</p>
-						</div>
+
+label {
+    font-size: 20px;
+}
+			</style>
+			<div id="page-wrapper">
+			
+			
+				<div class="row">
+					<div class="col-lg-12">
+						<h4 class="page-header alert alert-success pull-center">Create
+							Prescription</h4>
 					</div>
 				</div>
-                
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+				<div class="row">
+			
+					<div class="col-md-9">
+					<label for="disease" class="col-sm-3">Select Disease&nbsp;</label> 
+					
+					<select id="districtPermanent"	name="districtPermanent" class="col-sm-3">
+						<option value="">--Select--</option>
+						<option value="Fever">Fever</option>
+						<option value="Cough">Cough</option>
+						<option value="Cold">Cold</option>
+						<option value="Stomach Ache">Stomach Ache</option>
+						<option value="Head Ache">Head Ache</option>
+						<option value="Diabetics">Diabetics</option>
+						<option value="High BP">High BP</option>
+			
+					</select>
+				</div>
+				<div class="row">
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				
+				
+				</div>
+			
+				<div class="row">
+			
+					<div class="col-md-9">
+						<ul id="tabs">
+							<li><span class="close"></span><a href="#" name="#tab1">One</a></li>
+							<li><span class="close"></span><a href="#" name="#tab2">Two</a></li>
+							<li><span class="close"></span><a href="#" name="#tab3">Three</a></li>
+							<li><span class="close"></span><a href="#" name="#tab4">Four</a></li>
+						</ul>
+			
+						<div id="content">
+							<div id="tab1">
+								<h2>Lorem ipsum sit amet</h2>
+								<p>Praesent risus nisi, iaculis nec condimentum vel, rhoncus
+									vel dolor. Aenean nisi lectus, varius nec tempus id, dapibus non
+									quam.</p>
+								<p>Suspendisse ac libero mauris. Cras lacinia porttitor urna,
+									vitae molestie libero posuere et. Mauris turpis tortor, mollis non
+									vulputate sit amet, rhoncus vitae purus.</p>
+								<h3>Pellentesque habitant</h3>
+								<p>Vestibulum ante ipsum primis in faucibus orci luctus et
+									ultrices posuere cubilia curae.</p>
+							</div>
+							<div id="tab2">
+								<h2>Vivamus fringilla suscipit justo</h2>
+								<p>Aenean dui nulla, egestas sit amet auctor vitae, facilisis
+									id odio. Donec dictum gravida feugiat.</p>
+								<p>Class aptent taciti sociosqu ad litora torquent per conubia
+									nostra, per inceptos himenaeos. Cras pretium elit et erat
+									condimentum et volutpat lorem vehicula</p>
+			
+								<p>Morbi tincidunt pharetra orci commodo molestie. Praesent ut
+									leo nec dolor tempor eleifend.</p>
+							</div>
+							<div id="tab3">
+								<h2>Phasellus non nibh</h2>
+								<p>Non erat laoreet ullamcorper. Pellentesque magna metus,
+									feugiat eu elementum sit amet, cursus sed diam. Curabitur posuere
+									porttitor lorem, eu malesuada tortor faucibus sed.</p>
+								<h3>Duis pulvinar nibh vel urna</h3>
+								<p>Donec purus leo, porttitor eu molestie quis, porttitor sit
+									amet ipsum. Class aptent taciti sociosqu ad litora torquent per
+									conubia nostra, per inceptos himenaeos. Donec accumsan ornare elit
+									id imperdiet.</p>
+								<p>Suspendisse ac libero mauris. Cras lacinia porttitor urna,
+									vitae molestie libero posuere et.</p>
+							</div>
+							<div id="tab4">
+								<h2>Cum sociis natoque penatibus</h2>
+								<p>Magnis dis parturient montes, nascetur ridiculus mus. Nullam
+									ac massa quis nisi porta mollis venenatis sit amet urna. Ut in
+									mauris velit, sed bibendum turpis.</p>
+								<p>Nam ornare vulputate risus, id volutpat elit porttitor non.
+									In consequat nisi vel lectus dapibus sodales. Pellentesque
+									habitant morbi tristique senectus et netus et malesuada fames ac
+									turpis egestas. Praesent bibendum sagittis libero.</p>
+								<h3>Imperdiet sem interdum nec</h3>
+								<p>Mauris rhoncus tincidunt libero quis fringilla.</p>
+							</div>
+						</div>
+			
+			
+			
+					</div>
+					</div>
+					</div>
+				
+			
+			</div>
+<!-- /#page-wrapper -->
 
         <!-- Custom Theme JavaScript -->
         <script src="js/sb-admin-2.js"></script>
         <script>
+        
+        $('select').select2({ width : '50%'});
 function resetTabs(){
     $("#content > div").hide(); //Hide all content
     $("#tabs a").attr("id",""); //Reset id's      
