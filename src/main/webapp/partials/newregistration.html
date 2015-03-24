@@ -2,7 +2,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12" style="margin-top: -30px; margin-bottom: -10px">
-                    <h3 class="page-header alert alert-success pull-center"> Institute <i class="fa fa-university "> </i></h3>
+                    <h3 class="page-header alert alert-success pull-center">New Registration <i class="fa fa-user "> </i></h3>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Institute Details
+                            Patient Information
                             <button type="button"  style="float: right; margin-left: 10px;" class="btn btn-primary btn-xs"> <span class="fa fa-save"></span> Save</button>
                             
                         </div>
@@ -19,10 +19,19 @@
                             <div class="row">
                               <form role="form">
                                 <div class="col-lg-6">
-                                  
-                                        <div class="form-group">
-                                            <label>School Name</label>
-                                            <input class="form-control" placeholder="Enter School Name">
+                                  		<div class="row">
+                                  			 <div class="col-lg-6">
+		                                        <div class="form-group">
+		                                            <label>First Name</label>
+		                                            <input class="form-control" placeholder="first Name">
+		                                        </div>
+	                                        </div>
+	                                         <div class="col-lg-6">
+		                                        <div class="form-group">
+		                                            <label>Last Name</label>
+		                                            <input class="form-control" placeholder="last Name">
+		                                        </div>
+	                                        </div>
                                         </div>
                                          <div class="form-group">
                                             <label>Address</label>
@@ -30,28 +39,22 @@
                                         </div>
                                          <div class="form-group">
                                             <label>Email Address</label>
-                                            <input type="email" class="form-control" placeholder="Enter School Name">
+                                            <input type="email" class="form-control" placeholder="Enter email address">
                                         </div>
                                         <div class="form-group">
-                                            <label>School WebSite</label>
-                                            <input type="email" class="form-control" placeholder="Enter School URL">
-                                        </div>
-                                         <div class="form-group">
                                             <label>Phone</label>
                                             <input type="text" class="form-control" placeholder="Enter Phone Number">
                                         </div>
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label>Mobile</label>
                                             <input type="text" class="form-control" placeholder="Enter Mobile Number">
                                         </div>
-                                         <div class="form-group">
-                                            <label>FAX</label>
-                                            <input type="text" class="form-control" placeholder="Enter FAX Number">
-                                        </div>
                                         <div class="form-group">
-                                            <label>Admin Contact Number</label>
-                                            <input type="text" class="form-control" placeholder="Enter admin Number">
+                                            <label>Primary Health Professional</label>
+                                            <input type="text" class="form-control" placeholder="Preferred Doctor">
                                         </div>
+                                                                                
+                                        
                                        
                                   
                                 </div>
@@ -59,7 +62,7 @@
                                 <div class="col-lg-6" >
                                                                          
                                          <div class="form-group" ng-controller="DatepickerDemoCtrl">
-                                            <label>Start Date</label>
+                                            <label>Date of Birth</label>
                                             <p class="input-group">
 											<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 											<span class="input-group-btn">
@@ -68,19 +71,10 @@
 											</p>
 											 <p class="help-block">{{dt | date:'fullDate' }}</p>
                                         </div>
-                                        <div class="form-group" ng-controller="DatepickerDemoCtrl">
-                                            <label>End Date</label>
-                                            <p class="input-group">
-											<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-											<span class="input-group-btn">
-											    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-											</span>
-											</p>
-											 <p class="help-block">{{dt | date:'fullDate' }}</p>
-                                        </div>
+                                        
                                         <div class="form-group">
-                                            <label>Country</label><br>
-                                            <country-select data-ng-model="selectedCountry"></country-select>
+                                            <label>Ailment</label><br>
+                                             <input type="text" class="form-control" placeholder="Ailment">
                                             
                                         </div>
                                         <div class="form-group">

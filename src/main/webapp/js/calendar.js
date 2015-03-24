@@ -4,82 +4,36 @@ $(document).ready(function() {
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
+				right: 'agendaDay,month,agendaWeek'
 			},
-			defaultDate: '2015-02-12',
+			//defaultDate: '2015-02-12',
+			defaultView: 'agendaDay',
+			hiddenDays: [ 2, 4 ],
+
 			selectable: true,
 			selectHelper: true,
+			//timezone: 'local',
 			select: function(start, end) {
-				var title = prompt('Event Title:');
-				var eventData;
-				if (title) {
-					eventData = {
-						title: title,
-						start: start,
-						end: end
-					};
-					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-				}
-				$('#calendar').fullCalendar('unselect');
+				$("#eventstarttime").val(start);
+				$("#eventendtime").val(end);
+				$('#appointmentModel').modal('show');
+			
+			},
+			 eventClick: function(calEvent, jsEvent, view) {
+				 alert('Event: ' + calEvent.title);
 			},
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
-			events: [
-				{
-					title: 'All Day Event',
-					start: '2015-02-01'
-				},
-				{
-					title: 'Long Event',
-					start: '2015-02-07',
-					end: '2015-02-10'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2015-02-09T16:00:00'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2015-02-16T16:00:00'
-				},
-				{
-					title: 'Conference',
-					start: '2015-02-11',
-					end: '2015-02-13'
-				},
-				{
-					title: 'Meeting',
-					start: '2015-02-12T10:30:00',
-					end: '2015-02-12T12:30:00'
-				},
-				{
-					title: 'Lunch',
-					start: '2015-02-12T12:00:00'
-				},
-				{
-					title: 'Meeting',
-					start: '2015-02-12T14:30:00'
-				},
-				{
-					title: 'Happy Hour',
-					start: '2015-02-12T17:30:00'
-				},
-				{
-					title: 'Dinner',
-					start: '2015-02-12T20:00:00'
-				},
-				{
-					title: 'Birthday Party',
-					start: '2015-02-13T07:00:00'
-				},
-				{
-					title: 'Click for Google',
-					url: 'http://google.com/',
-					start: '2015-02-28'
-				}
-			]
+			events: {
+			        url: '/rest/dashboard/appointment',
+			        type: 'POST',
+			       
+			        error: function() {
+			            alert('there was an error while fetching events!');
+			        },
+			        color: 'yellow',   // a non-ajax option
+			        textColor: 'black' // a non-ajax option
+			    }
 		});
 		
 		

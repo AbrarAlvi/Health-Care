@@ -1,20 +1,20 @@
 (function (){
-	var taxasilaApp = angular.module("taxasilaApp", [ 'ui.bootstrap','ngRoute', 'taxsila-ctrls','taxasila-settings', 'ngResource' ,'countrySelect']);
+	var taxasilaApp = angular.module("taxasilaApp", [ 'ui.bootstrap','ngRoute', 'taxsila-ctrls','taxasila-settings', 'ambulatoryModule','ngResource' ,'countrySelect']);
 	taxasilaApp.config(function($routeProvider) {
 		$routeProvider.when('/', {
 			controller : 'DashboardCtrl',
 			templateUrl : 'partials/dashboard.html'
-		}).when('/settings/general', {
-			controller : 'SettingsCtrl',
-			templateUrl : 'partials/general.html'	
-		}).when('/settings/courses', {
-			controller : 'SettingsCtrl',
-			templateUrl : 'partials/courses.html'	
-		}).when('/settings/batch', {
-			controller : 'SettingsCtrl',
-			templateUrl : 'partials/batch.html'	
+		}).when('/appointment', {
+			controller : 'DashboardCtrl',
+			templateUrl : 'partials/appointment.html'	
+		}).when('/newregistration', {
+			controller : 'DashboardCtrl',
+			templateUrl : 'partials/newregistration.html'	
+		}).when('/patient', {
+			controller : 'ambulatoryCtrl',
+			templateUrl : 'partials/patient.html'	
 		}).when('/createpresc', {
-			controller : 'SettingsCtrl',
+			controller : 'ambulatoryCtrl',
 			templateUrl : 'partials/createPrescription.html'	
 		}).when('/settings/std_catagory', {
 			controller : 'SettingsCtrl',
