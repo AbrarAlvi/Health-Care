@@ -1,0 +1,299 @@
+        <!-- Page Content -->
+        <div id="page-wrapper">
+        
+         <div class="row">
+                <div class="col-lg-12" style="margin-top: -30px; margin-bottom: -10px;">
+                	<div class="row page-header alert alert-success" >
+                		<div class="col-lg-2">
+			                     <h4 class=" pull-center"><i class="fa fa-user "> </i> Patient 
+			                     <!-- <span class="pull-right"><i class="fa fa-stethoscope"> Dr. Smita Gutgutia </i></span> -->
+			                     
+			                     
+			                      
+			                     </h4>
+			             </div>
+			              <div class="col-lg-4"> 
+			              	 <span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="Search..." >
+			                            <span class="input-group-btn">
+			                            <button class="btn btn-default" type="button">
+			                                <i class="fa fa-search"></i>
+			                            </button>
+			                             <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Next Patient on the Queue">
+			                                <i class="fa fa-chevron-circle-right"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+			              </div>
+			             
+			             
+			              
+			             <div class="col-lg-6"> 
+		             		<button type="button" ng-click="sessionEnd" style="float: right; margin-left: 100px;" 
+			                      	class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="End this session"> 
+			                      	<i class="fa fa-sign-out"> Patient Signout</i>
+                     		</button>
+				            <button type="button"  ng-click="createNewPrescription()" style="float: right; margin-left: 10px;" 
+			                      	class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="Fetch patients old prescriptions"> 
+			                      	<i class="fa fa-plus-square"> Rx (History)</i>
+	                      	</button>
+                      
+	                      	<button type="button"  ng-click="createNewPrescription()" style="float: right; margin-left: 10px;" 
+			                      	class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="Create Prescription for Patient"> 
+			                      	<i class="fa fa-plus-square"> Rx (create)</i>
+	                      	</button>
+			             </div>       
+                     </div>
+                </div>
+                
+                
+             
+                
+                <!-- /.col-lg-12 -->
+            </div>
+        
+        
+           <!--  <div class="row">
+                <div class="col-lg-12" style="margin-top: -30px; margin-bottom: -10px;">
+                     <div  class="page-header alert alert-success pull-center"><i class="fa fa-user "> </i> Patient 
+                       <span class="pull-right"><i class="fa fa-plus-square"> Rx</i></span>
+                      
+                      	
+                     </div>
+                     
+                </div>
+              <div class="col-lg-4" style="margin-top: -110px; margin-left: 150px;">
+          
+                      <div class="input-group custom-search-form page-header alert alert-success pull-center">
+                      		
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+	                            <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="bottom" title="Search Patient by Name">
+	                                <i class="fa fa-search"></i>
+	                            </button>
+	                             <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Next Patient on the Queue">
+	                                <i class="fa fa-chevron-circle-right"></i>
+	                            </button>
+                        </span>
+                        </div>
+                </div> 
+                
+                
+               
+                </div> -->
+                
+                <div class="row">
+                <div class = "col-lg-6 ">
+                 <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Patient General Data
+                        </div>
+                        <div class="panel-body">
+				                <div class="row">
+				                 <div class="col-lg-6" 	>
+				                 	 	
+					                 	<div class="form-group" >
+							                 <label>First Name</label>
+							                 <input class="form-control" placeholder="first Name" ng-model="patient.firstName">
+							                  
+							            </div>
+							      </div>
+							      <div class="col-lg-6" >
+				                 	 	
+					                 	<div class="form-group" >
+							                 <label>Last Name</label>
+							                 <input class="form-control" placeholder="last Name" ng-model="patiennt.lastName">
+							                  
+							            </div>
+							      </div>
+							
+				            </div>
+				            
+				             <div class="row">
+				                 <div class="col-lg-4" 	>
+				                 	 	
+					                 	<div class="form-group" >
+							                 <label>Age</label>
+							                 <input class="form-control" placeholder="Age" ng-model="patient.age">
+							                  
+							            </div>
+							      </div>
+							      <div class="col-lg-4" >
+				                 	 	
+					                 	<div class="form-group" >
+							                 <label>Sex</label>
+							                 <input class="form-control" placeholder="Sex" ng-model="patient.sex">
+							                  
+							            </div>
+							      </div>
+							
+				            </div>
+				            
+				             
+				             <div class="row">
+				                 <div class="col-lg-12" 	>
+				                 	 	
+					                 <div class="form-group">
+				                           <label>Allergies</label>
+				                           <select multiple class="form-control">
+				                               <option>Milk</option>
+				                               <option>Nuts</option>
+				                               <option>Onion</option>                               
+				                           </select>
+				                       </div>
+							      </div>
+							   
+							
+				            </div>
+				              
+				             <div class="row">
+				                 <div class="col-lg-12" 	>
+				                 	 	
+					                 <div class="form-group">
+				                           <label>Past Ailment</label>
+				                           <select multiple class="form-control">
+				                               <option>Diabetic</option>
+				                               <option>Food Poising</option>
+				                               <option>Fever</option>                               
+				                           </select>
+				                       </div>
+							      </div>
+							   
+							
+				            </div>
+				             <div class="row">
+				                 <div class="col-lg-12" >
+				                 	 	
+					                  <div class="form-group">
+				                           <label>Family Ailment</label>
+				                           <select multiple class="form-control">
+				                               <option>Diabetic</option>
+				                               <option>High BP</option>
+				                               <option>Anemia</option>                               
+				                           </select>
+				                       </div>
+							      </div>
+							   
+							
+				            </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-lg-6">
+           		 <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Todays Visit Informations
+                           <button type="button"  style="float: right; margin-left: 10px;" class="btn btn-primary btn-xs"> <span class="fa fa-save"></span> Save</button>
+                        </div>
+                        <div class="panel-body">
+                        	 <div class="col-lg-12" >
+				                 	 <div class="row">
+				                 	 	 <div class="col-lg-6" >	 	
+							                  <div class="form-group">
+						                          <label>Weight</label>
+						                            <input class="form-control" placeholder="weight" ng-model="patient.visit.weight">
+						                      </div>
+						                  </div>
+						                  <div class="col-lg-6" >	 	
+							                  <div class="form-group">
+						                          <label>Temperature</label>
+						                          <input class="form-control" placeholder="temperature" ng-model="patient.visit.temperature">
+						                      </div>
+						                  </div>
+						             </div>         
+							   </div>
+							   
+							    <div class="col-lg-12" >
+				                 	 
+				                 	 <div class="row">
+				                 	 	 <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Diastolic</label>
+						                          <input class="form-control" placeholder="diastole" ng-model="patient.visit.diastole">
+						                      </div>
+						                  </div>   
+						                  <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Systolic</label>
+						                          <input class="form-control" placeholder="systolic" ng-model="patient.visit.systolic">
+						                      </div>
+						                  </div>     
+				                      </div>
+							   </div>
+							    <div class="col-lg-12" >
+				                 	 
+				                 	 <div class="row">
+				                 	 	 <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Respiratory rate</label>
+						                          <input class="form-control" placeholder="respiratory rate" ng-model="patient.visit.resprate">
+						                      </div>
+						                  </div>   
+						                  <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Glycemia</label>
+						                          <input class="form-control" placeholder="glycemia" ng-model="patient.visit.glycemia">
+						                      </div>
+						                  </div>     
+				                      </div>
+							   </div>
+							    <div class="col-lg-12" >
+				                 	 
+				                 	 <div class="row">
+				                 	 	 <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Base Condition</label>
+						                          <input class="form-control" placeholder="condition" ng-model="patient.visit.basecondition">
+						                      </div>
+						                  </div>   
+						                  <div class="col-lg-6" >	
+							                  <div class="form-group">
+						                          <label>Evaluation</label>
+						                          <input class="form-control" placeholder="evaluation" ng-model="patient.visit.evaluation">
+						                      </div>
+						                  </div>     
+				                      </div>
+							   </div>
+							   <div class="col-lg-12" >
+				                 	 	
+					                  <div class="form-group">
+				                         
+				                          <div class="row">
+				                          	 <div class="col-lg-6" >
+				                          		  <label>Session # 0</label>
+				                          		  <input class="form-control" placeholder="Ailment" ng-model="patient.visit.session.ailment">
+				                          	 </div>
+				                          	 <div class="col-lg-6" >
+				                          	 	 <label>Next Session</label>
+						                        	<input class="form-control" placeholder="Ailment" ng-model="patient.visit.session.nextSession">
+						                     </div>
+				                          </div>
+				                      </div>
+							   </div>
+							    <div class="col-lg-12" >
+				                 	 	
+					                  <div class="form-group">                 
+		                         
+			                          		  <label>Warnings</label>
+			                          		  <input class="form-control" placeholder="warnings" ng-model="patient.visit.session.warning">
+				                          	
+				                      </div>
+							   </div>
+                        </div>
+                 </div>
+                        
+            </div>
+            </div>
+            
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/sb-admin-2.js"></script>
+		<script>
+		
+		$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
+		</script>
