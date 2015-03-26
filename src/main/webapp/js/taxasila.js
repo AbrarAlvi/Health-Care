@@ -16,6 +16,16 @@
 		}).when('/createpresc', {
 			controller : 'ambulatoryCtrl',
 			templateUrl : 'partials/createPrescription.html'	
+		}).when('/settings/general', {
+			controller : 'SettingsCtrl',
+			templateUrl : 'partials/general.html'	
+		}).when('/settings/courses', {
+			controller : 'SettingsCtrl',
+			templateUrl : 'partials/courses.html'	
+		}).when('/createprescription', {
+			controller : 'SettingsCtrl',
+			templateUrl : 'partials/createPrescription.html'	
+			
 		}).when('/settings/std_catagory', {
 			controller : 'SettingsCtrl',
 			templateUrl : 'partials/std_catagory.html'	
