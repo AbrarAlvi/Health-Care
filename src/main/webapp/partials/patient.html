@@ -37,11 +37,12 @@
 			                      	<i class="fa fa-plus-square"> Rx (History)</i>
 	                      	</button>
                       
-	                      	<button type="button"  ng-click="createNewPrescription()" style="float: right; margin-left: 10px;" 
+	                      	<button type="button"  data-toggle="modal" data-target="#myModal" style="float: right; margin-left: 10px;" 
 			                      	class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="Create Prescription for Patient"> 
 			                      	<i class="fa fa-plus-square"> Rx (create)</i>
-	                      	</button>
-			             </div>       
+	                      	</button> 
+	                      	
+	                   
                      </div>
                 </div>
                 
@@ -100,6 +101,29 @@
             
             <!-- /.row -->
         </div>
+        
+        <!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-lg"">
+				    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						      </div>
+						      <div class="modal-body">
+						       <div ng-include="'partials/createPrescription.html'"></div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						      </div>
+						    </div>
+				  
+				
+				  </div>
+				</div>
+        </div>
+        
         <!-- /#page-wrapper -->
 
         <!-- Custom Theme JavaScript -->
