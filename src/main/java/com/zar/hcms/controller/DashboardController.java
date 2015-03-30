@@ -20,8 +20,8 @@ public class DashboardController {
 	
 	//UserService userService=new UserService();
 	     	    
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET,headers="Accept=application/json")
-	public User getUser(@PathVariable int id) {
+	@RequestMapping(value = "doctor/{doctorName}", method = RequestMethod.GET,headers="Accept=application/json")
+	public User getUser(@PathVariable String doctorName) {
 		User user=new User();
 		user.setUserid(001);
 		user.setFirstName("ruhul");
