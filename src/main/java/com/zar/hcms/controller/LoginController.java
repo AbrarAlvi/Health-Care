@@ -14,7 +14,7 @@ import com.zar.hcms.domain.User;
 
 
 @RestController
-@RequestMapping("/Login123/")
+@RequestMapping("/login/")
 public class LoginController {
 	
 	//UserService userService=new UserService();

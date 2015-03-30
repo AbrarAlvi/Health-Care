@@ -1,14 +1,22 @@
 (function(){
-	var taxasilaApp = angular.module("ambulatoryModule",['ngResource']);
+	var taxasilaApp = angular.module("ambulatoryModule",['ngResource','ui.bootstrap']);
 	taxasilaApp.controller("ambulatoryCtrl", [ '$scope','ambulatoryService', '$routeParams','$location', function($scope, instituteService, $routeParams, $location) {	
-		var path =  $location.path();
-		
-		
-		$scope.patient = {firstName:"Ruhul", lastName:"mazumder", sex:"Male", age:"32", allergy:["Milk","Nuts","Tea"]};
+		 console.log("ambulatoryCtrl  reporting for duty.");	
+		var path =  $location.path();		
+		$scope.patient = {firstName:"Ruhul", lastName:"Mazumder", sex:"Male", age:"32", allergy:["Milk","Nuts","Tea"]};
 
 		$scope.updateInstitute  = function() {
 			instituteService.updateInstitute($scope.institute, $scope);
 		}; 	
+		
+		  $selectedPatient = undefined;
+		  $scope.patients = ['Ruhul Amin' , 'Avrar Alvi' , 'Jabeed Ali', 'Pankaj Pathak', 'Prasant Yadav', 'Rituporna Ray', 'Smatha Sethi'];
+		  $scope.onPatientSelect = function ($item, $model, $label) {
+			 
+			    $scope.$item = $item;
+			    $scope.$model = $model;
+			    $scope.$label = $label;
+			};
 	} ]);
 
 
@@ -48,5 +56,7 @@
 			});
 		}
 	}
+	
+	
 
 })();

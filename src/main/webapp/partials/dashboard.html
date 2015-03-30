@@ -13,13 +13,14 @@
 			             </div>
 			              <div class="col-lg-4"> 
 			              </div>
-			             <div class="col-lg-4"> 
+			             <div class="col-lg-4" > 
 			               <span class="input-group input-group-sm custom-search-form pull-right">
-			                            <input type="text" class="form-control" placeholder="Search..." >
-			                            <span class="input-group-btn">
+			                           <!--  <input type="text" class="form-control" placeholder="Search..." > -->
+			                           <input type="text" ng-model="currentDoctor" typeahead="doctor for doctor in doctors | filter:$viewValue | limitTo:8" class="form-control" typeahead-on-select='onDoctorSelect($item, $model, $label)'>
+			                             <span class="input-group-btn">
 			                            <button class="btn btn-default" type="button">
 			                                <i class="fa fa-search"></i>
-			                            </button>
+			                            </button> 
 			                       		 </span>
 			                        </span>
 			             </div>       
@@ -138,7 +139,9 @@
                         </div>
                         	
                         	<span class="input-group input-group-sm custom-search-form pull-right">
-	                            <input type="text" class="form-control" placeholder="add appointment queue.." >
+                        		<input type="text" ng-model="selectedPatient" placeholder="add appointment queue.."  typeahead="patient for patient in patients | filter:$viewValue | limitTo:8" class="form-control">
+                        	
+	                            <!-- <input type="text" class="form-control" placeholder="add appointment queue.." > -->
 	                            <span class="input-group-btn">
 		                            <button class="btn btn-default" type="button">
 		                                <i class="fa fa-search"></i>
@@ -184,7 +187,7 @@
                                     <i class="fa fa-calendar fa-2x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div>Appointments Dr. {{healthProfessionalName}}</div>
+                                    <div>Appointments {{currentDoctor}}</div>
                                     
                                 </div>
                             </div>
@@ -258,8 +261,7 @@
 
         <!-- Morris Charts JavaScript -->
         <script src="js/plugins/morris/raphael.min.js"></script>
-        <script src="js/plugins/morris/morris.min.js"></script>
-        <script src="js/plugins/morris/morris-data.js"></script>
+
 
         <!-- Custom Theme JavaScript -->
         <script src="js/sb-admin-2.js"></script>
@@ -275,5 +277,10 @@
 			  $('[data-toggle="tooltip"]').tooltip()
 			})
 		</script>
-		
+		<script type="text/ng-template" id="customTemplate.html">
+ 		 <a>
+     		 <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+    		 <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+  		 </a>
+</script>
 		

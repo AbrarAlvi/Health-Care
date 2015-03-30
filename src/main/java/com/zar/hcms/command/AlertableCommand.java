@@ -1,4 +1,4 @@
-package com.zar.hcms.command;
+/*package com.zar.hcms.command;
 
 import com.zar.hcms.domain.IHCMSDTO;
 
@@ -8,7 +8,7 @@ import com.zar.hcms.domain.IHCMSDTO;
 public abstract class AlertableCommand extends Command {
 
 	protected AlertableCommand(IHCMSDTO dto) {
-		super(dto);
+		//super(dto);
 	}
 	
 	protected void persistEvent(EventLog logEvent){
@@ -27,3 +27,4 @@ public abstract class AlertableCommand extends Command {
 	}
 
 }
+*/
