@@ -158,10 +158,10 @@ label {
 					<div class="col-md-12">
 					
 					
+  {{prescription}}
   
   
-  
-  
+ 
 					<label for="disease" class="col-sm-6">Select Disease&nbsp;</label> 
 					
 					<span class="input-group input-group-sm custom-search-form pull-right">
@@ -186,38 +186,27 @@ label {
 								<div class="form-group">
 									<label for="medication" class="col-sm-4 control-label">Medication&nbsp;</label>
 						
-										<div class="col-sm-7">
-											<span class="input-group input-group-sm custom-search-form pull-right">
-			                            <input type="text" class="form-control" placeholder="Add medicine..." >
-			                            <span class="input-group-btn">
+										<div class="col-sm-8">
+											
+			                            <input type="text" ng-model="selectmedication.drugname"  class="form-control" placeholder="Add medicine..." >
 			                            
-			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
-			                                <i class="fa fa-plus-square"></i>
-			                            </button>
-			                       		 </span>
-			                        </span>
+			                        
 								</div>
 							</div>
 							
 							<div class="form-group">
 									<label for="route" class="col-sm-4 control-label">Route&nbsp;</label>
 						
-										<div class="col-sm-7">
-											<span class="input-group input-group-sm custom-search-form pull-right">
-			                            <input type="text" class="form-control" placeholder="route..." >
-			                            <span class="input-group-btn">
-			                            
-			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
-			                                <i class="fa fa-plus-square"></i>
-			                            </button>
-			                       		 </span>
-			                        </span>
+										<div class="col-sm-8">
+											
+			                            <input type="text" ng-model="selectmedication.adminroute" class="form-control" placeholder="route..." >
+			                           
 								</div>
 							</div>
 								
 							
 								<div class="form-group buttons" align="center" style="padding: 8px;">
-								<button type="button" id="addToPaper" style="float: right; margin-left: 10px;" 
+								<button type="button" id="addToPaper" ng-click="addDrug()" style="float: right; margin-left: 10px;" 
 			                      	class="btn btn-primary btn-xs" > 
 			                      	 Add
 	                      	</button> 
@@ -230,11 +219,20 @@ label {
 					</div>
 					
 					<div class="papers col-md-5" style="margin-top: 15px;">
+						<div id="" ng-repeat="medicine in prescription"  style="width: 90%; display: block;">
+							
+							
+							
+							{{medicine.drugname}}
+						</div>
+						<div id="inline" style="width: 90%; display: block;">
+							{{selectmedication.drugname}}
+						</div>
 						
 						<div id="inline" style="width: 90%; display: block;">
-							
+							{{selectmedication.adminroute}}
 						</div>
-					<p class="previewContent"></p>
+					
 				
 					</div> 
 				</div>
@@ -306,15 +304,6 @@ $(document).ready(function() {
     	$('#prescription_main').append('<div class="col-md-12"><ul id="tabs"><li><span class="closed"></span><a href="#">'+disease+'</a></li></ul><div id="content"><div id="tab1"></div></div></div>')
     });
     
-    
-    $('#addToPaper').click(function(){
-    	//alert("Testing");
-    	$('p.previewContent').text('');
-    	
-    	$('#content').clone().appendTo('p.previewContent');
-    	
-    	
-	});
-    
+   
 });
 </script>

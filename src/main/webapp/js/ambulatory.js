@@ -5,11 +5,28 @@
 		
 		
 		$scope.patient = {firstName:"Ruhul", lastName:"mazumder", sex:"Male", age:"32", allergy:["Milk","Nuts","Tea"]};
+		
+		$scope.prescription =[];
+		$scope.selectmedication = {};
 
+		
+		$scope.addDrug  = function() {
+			
+			
+			//instituteService.updateInstitute($scope.institute, $scope);
+			$scope.prescription.push($scope.selectmedication);
+			$scope.selectmedication = {};
+		}; 	
+		
 		$scope.updateInstitute  = function() {
 			instituteService.updateInstitute($scope.institute, $scope);
 		}; 	
+		
+		
+		
 	} ]);
+	
+	
 
 
 	taxasilaApp.factory( 'ambulatoryService', [ '$resource', function( $resource ){
