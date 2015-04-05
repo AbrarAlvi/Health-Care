@@ -135,6 +135,12 @@ label {
 }
 
 
+.btn-xs, .btn-group-xs>.btn {
+  padding: 3px 37px;
+  font-size: 14px;
+  
+}
+
 
 
 </style>
@@ -168,23 +174,68 @@ label {
 			                       		 </span>
 			                        </span>
 				</div>
-							
-				<div class="row" id="prescription_main">
-					<div class="col-md-8">
+						
+				<div class="row" id="prescription_main" style="margin-top: 15px;">
+					<div class="col-md-8" style="margin-top: 10px;">
 						<ul id="tabs">
 							<li><span class="closed"></span><a href="#" name="#tab1">Fever</a></li>
 						</ul>
 						<div id="content">
 							<div id="tab1">
+								<form id="prescriptionForm" class="form-horizontal" action='#' method="POST" >
+								<div class="form-group">
+									<label for="medication" class="col-sm-4 control-label">Medication&nbsp;</label>
+						
+										<div class="col-sm-7">
+											<span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="Add medicine..." >
+			                            <span class="input-group-btn">
+			                            
+			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
+			                                <i class="fa fa-plus-square"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+								</div>
+							</div>
+							
+							<div class="form-group">
+									<label for="route" class="col-sm-4 control-label">Route&nbsp;</label>
+						
+										<div class="col-sm-7">
+											<span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="route..." >
+			                            <span class="input-group-btn">
+			                            
+			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
+			                                <i class="fa fa-plus-square"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+								</div>
+							</div>
 								
+							
+								<div class="form-group buttons" align="center" style="padding: 8px;">
+								<button type="button" id="addToPaper" style="float: right; margin-left: 10px;" 
+			                      	class="btn btn-primary btn-xs" > 
+			                      	 Add
+	                      	</button> 
+						
+					</div>
+								
+								</form>
 							</div>
 						</div>
 					</div>
 					
-					<div class="papers col-md-5">
+					<div class="papers col-md-5" style="margin-top: 15px;">
 						
-						
-					
+						<div id="inline" style="width: 90%; display: block;">
+							
+						</div>
+					<p class="previewContent"></p>
+				
 					</div> 
 				</div>
 			</div>
@@ -254,5 +305,15 @@ $(document).ready(function() {
     	var disease="XYZ";
     	$('#prescription_main').append('<div class="col-md-12"><ul id="tabs"><li><span class="closed"></span><a href="#">'+disease+'</a></li></ul><div id="content"><div id="tab1"></div></div></div>')
     });
+    
+    
+    $('#addToPaper').click(function(){
+    	alert("Testing");
+    	$('p.previewContent').text('');
+    	
+    	$('.container').clone().appendTo('p.previewContent');
+    	
+	});
+    
 });
 </script>
