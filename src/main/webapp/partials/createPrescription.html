@@ -27,7 +27,7 @@ span.closed{
 	position:relative;
 	z-index: 9999;
 	top:0;
-	right: 40px;
+	right: -357px;
     cursor:pointer;
     color: #fff;
     border: 1px solid #AEAEAE;
@@ -105,7 +105,8 @@ label {
 .papers {
   background-color: rgb(236, 249, 121);
   height: 350px;
-//  width: 400px;
+  padding: 20px;
+  width: 260px;
   -webkit-box-shadow: 
         1px 1px   0 rgba(0,   0,   0,   0.100), 
         3px 3px   0 rgba(255, 255, 255, 1.0), 
@@ -134,6 +135,12 @@ label {
 }
 
 
+.btn-xs, .btn-group-xs>.btn {
+  padding: 3px 37px;
+  font-size: 14px;
+  
+}
+
 
 
 </style>
@@ -148,58 +155,91 @@ label {
 				
 				<div class="row">
 			
-					<div class="col-md-9">
-					<label for="disease" class="col-sm-3">Select Disease&nbsp;</label> 
+					<div class="col-md-12">
 					
-					<select id="disease"	name="disease" class="col-sm-3">
-						<option value="">--Select--</option>
-						<option value="Fever">Fever</option>
-						<option value="Cough">Cough</option>
-						<option value="Cold">Cold</option>
-						<option value="Stomach Ache">Stomach Ache</option>
-						<option value="Head Ache">Head Ache</option>
-						<option value="Diabetics">Diabetics</option>
-						<option value="High BP">High BP</option>
-			
-					</select>
-				</div>
-				<div class="row">
-				<br>
-				<br>
-				<br>
-				<br>
-				
-				
-				
-				</div>
-			
-				<div class="row">
-			
-					<div class="col-md-8">
 					
+  
+  
+  
+  
+					<label for="disease" class="col-sm-6">Select Disease&nbsp;</label> 
+					
+					<span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="Search disease..." >
+			                            <span class="input-group-btn">
+			                            
+			                             <button id="addPrescription" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
+			                                <i class="fa fa-plus-square"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+				</div>
 						
-			
-			
-			
+				<div class="row" id="prescription_main" style="margin-top: 15px;">
+					<div class="col-md-8" style="margin-top: 10px;">
+						<ul id="tabs">
+							<li><span class="closed"></span><a href="#" name="#tab1">Fever</a></li>
+						</ul>
+						<div id="content">
+							<div id="tab1">
+								<form id="prescriptionForm" class="form-horizontal" action='#' method="POST" >
+								<div class="form-group">
+									<label for="medication" class="col-sm-4 control-label">Medication&nbsp;</label>
+						
+										<div class="col-sm-7">
+											<span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="Add medicine..." >
+			                            <span class="input-group-btn">
+			                            
+			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
+			                                <i class="fa fa-plus-square"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+								</div>
+							</div>
+							
+							<div class="form-group">
+									<label for="route" class="col-sm-4 control-label">Route&nbsp;</label>
+						
+										<div class="col-sm-7">
+											<span class="input-group input-group-sm custom-search-form pull-right">
+			                            <input type="text" class="form-control" placeholder="route..." >
+			                            <span class="input-group-btn">
+			                            
+			                             <button id="addMedication" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
+			                                <i class="fa fa-plus-square"></i>
+			                            </button>
+			                       		 </span>
+			                        </span>
+								</div>
+							</div>
+								
+							
+								<div class="form-group buttons" align="center" style="padding: 8px;">
+								<button type="button" id="addToPaper" style="float: right; margin-left: 10px;" 
+			                      	class="btn btn-primary btn-xs" > 
+			                      	 Add
+	                      	</button> 
+						
 					</div>
-					
-					<div class="papers col-md-4">
-						<div class="row">
-							<div class="col-md-12">
-							Name of the Dispersary
+								
+								</form>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-							Mediccal creates 
-							</div>
-						</div>
+					</div>
 					
-					</div>
-					</div>
-					</div>
+					<div class="papers col-md-5" style="margin-top: 15px;">
+						
+						<div id="inline" style="width: 90%; display: block;">
+							
+						</div>
+					<p class="previewContent"></p>
 				
+					</div> 
+				</div>
 			</div>
+		</div>
 <!-- /#page-wrapper -->
 
         <!-- Custom Theme JavaScript -->
@@ -261,5 +301,19 @@ $(document).ready(function() {
           $(myUrlTab).fadeIn(); // Show url tab content        
       }
     }
+    $('#addPrescription').on("click",function(e) {
+    	var disease="XYZ";
+    	$('#prescription_main').append('<div class="col-md-12"><ul id="tabs"><li><span class="closed"></span><a href="#">'+disease+'</a></li></ul><div id="content"><div id="tab1"></div></div></div>')
+    });
+    
+    
+    $('#addToPaper').click(function(){
+    	alert("Testing");
+    	$('p.previewContent').text('');
+    	
+    	$('.container').clone().appendTo('p.previewContent');
+    	
+	});
+    
 });
 </script>
