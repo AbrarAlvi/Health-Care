@@ -15,7 +15,7 @@
 		$scope.addDrug  = function() {
 			
 			
-			//instituteService.updateInstitute($scope.institute, $scope);
+
 			$scope.prescription.push($scope.selectmedication);
 			$scope.selectmedication = {};
 		}; 	
