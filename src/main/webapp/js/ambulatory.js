@@ -9,12 +9,10 @@
 		
 		
 		$scope.prescription =[];
-		$scope.selectmedication = {};
+		$scope.selectmedication = {drugname:'uyiuyiuy'};
 
 		
-		$scope.addDrug  = function() {
-			
-			
+		$scope.addDrug  = function() {			
 
 			$scope.prescription.push($scope.selectmedication);
 			$scope.selectmedication = {};
@@ -32,7 +30,23 @@
 			    $scope.$model = $model;
 			    $scope.$label = $label;
 			};
+			
+			$selectedDisease = undefined;
+			$scope.diseaselist = ['Cough' , 'Fever' , 'Cholera', 'Anotia', 'Anthrax', 'Ebola'];
+			 $scope.onDiseaseSelect = function ($item, $model, $label) {				 
+				    $scope.$item = $item;
+				    $scope.$model = $model;
+				    $scope.$label = $label;
+				};				
+				
+				
+			$scope.selected_disease ='';
 		
+			
+			$scope.addNewPrescription  = function() {			
+				
+				$scope.selected_disease = $("#disease_text").val();
+			}; 	
 		
 	} ]);
 	
