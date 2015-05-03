@@ -137,3 +137,25 @@ label {
   font-size: 14px;
   
 }
+
+fieldset.with-border {
+	border: 1px groove #A4A4A4 !important;
+	padding: 20px;
+	width: 100%;
+	margin: 0 0 10px 0 !important;
+	background-color: #dddddd;
+	box-shadow: 0 0 10px #999;
+}
+
+legend.with-border {
+	font-weight: bold !important;
+	font-style: italic !important;
+	text-align: left !important;
+	width: auto;
+	border-bottom: none;
+	margin-bottom: 0px;
+	font-size: 14px;
+	color: #fff;
+	padding: 5px 10px;
+	background: #98AFC7;
+}
