@@ -1,171 +1,198 @@
-              <!-- CSS -->
-       <link rel="stylesheet" href="css/createpresc.css">
-        <!-- Page Content -->
-
-       
-			<div id="page-wrapper">
-			
-			<div class="row">
-					<div class="col-lg-10">
-						<h4 class="page-header alert alert-success pull-center">Create
-							Prescription</h4>
-					</div>
-				</div>
-				
-				<div class="row">
-			
-					<div class="col-md-12">
+					
+					<!-- CSS -->
+					<link rel="stylesheet" href="css/createpresc.css">
+					<!-- Page Content -->
 					
 					
-  {{prescription}}
-  
-  
-  {{1 + 2}}
-  
-  
- 
-					<label for="disease" class="col-sm-6">Select Disease&nbsp;</label> 
+					<div id="page-wrapper">
 					
-					<span class="input-group input-group-sm custom-search-form pull-right">
-			                            <input type="text" class="form-control" placeholder="Search disease..." >
-			                            <span class="input-group-btn">
-			                            
-			                             <button id="addPrescription" class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Add">
-			                                <i class="fa fa-plus-square"></i>
-			                            </button>
-			                       		 </span>
-			                        </span>
-				</div>
-						
-				<div class="row" id="prescription_main" style="margin-top: 15px;">
-					<div class="col-md-8" style="margin-top: 10px;">
-						<ul id="tabs">
-							<li><span class="closed"></span><a href="#" name="#tab1">Fever</a></li>
-						</ul>
-						<div id="content">
-							<div id="tab1">
-								<form id="prescriptionForm" class="form-horizontal" action='#' method="POST" >
-								<div class="form-group">
-									<label for="medication" class="col-sm-4 control-label">Medication&nbsp;</label>
-						
-										<div class="col-sm-8">
-											
-			                            <input type="text" ng-model="selectmedication. loi"  class="form-control" placeholder="Add medicine..." >
-			                            
-			                        
+						<div class="row">
+							<div class="col-lg-12">
+								<h5 class="page-header alert alert-success pull-center">Create
+									Prescription</h5>
+							</div>
+						</div>
+					
+						<div class="row">
+					
+							<div class="col-md-12">				
+					
+								<label for="disease" class="col-sm-3"><font size="1">Select Disease</font>&nbsp;</label> <span
+									class="input-group input-group-sm custom-search-form pull-left col-md-4">
+									<input id="disease_text" type="text" ng-model="selectedDisease"
+									typeahead="disease for disease in diseaselist | filter:$viewValue | limitTo:8"
+									class="form-control" placeholder="Search disease..."
+									typeahead-on-select='onDiseaseSelect($item, $model, $label)'>
+									<span class="input-group-btn">
+					
+										<button id="addPrescription" class="btn btn-default" type="button"
+											data-toggle="tooltip" data-placement="right" title="Add"  ng-click="addNewPrescription ()">
+											<i class="fa fa-plus-square"></i>
+										</button>
+								</span>
+								</span>
+							</div>
+					
+							<div class="row" id="prescription_main" style="margin-top: 15px;">
+								<div id="prescription_form" class="col-md-8" style="margin-top: 10px;" ng-style="{opacity:1}">
+									<ul id="tabs">
+										<li><span class="closed"></span><a href="#" name="#tab1">{{selected_disease}}</a></li>
+									</ul>
+									<div id="content">
+										<div id="tab1">
+											<form id="prescriptionForm" class="form-horizontal" action='#'
+												method="POST">
+												
+												
+												<div class="form-group">
+													<label for="medication" class="col-sm-4 control-label">Medicationq&nbsp;</label>
+					
+													<div class="col-sm-8">
+					
+														<input type="text" class="prescontrols" ng-model="selectmedication.drugname"
+															class="form-control" placeholder="Add medicine...">
+					
+					
+													</div>
+												</div>
+					
+												<div class="form-group">
+													<label for="route" class="col-sm-4 control-label">Route&nbsp;</label>
+					
+													<div class="col-sm-8">
+					
+														<input type="text" class="prescontrols" ng-model="selectmedication.adminroute"
+															class="form-control" placeholder="route...">
+					
+													</div>
+												</div>
+					
+					
+												<div class="form-group buttons" align="center"
+													style="padding: 8px;">
+													<button type="button" id="addToPaper" ng-click="addDrug()"
+														style="float: right; margin-left: 10px;"
+														class="btn btn-primary btn-xs">Add</button>
+					
+												</div>
+					
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="papers col-md-6" style="margin-top: 15px;">
+					
+									<div class="row">
+					
+										<div class="form-group col-sm-2">
+											<img src="images/rxlogo.jpg" alt="rxloho" width="25" height="30">
+										</div>
+										<div class="form-group">
+											<label for="Patient Name" class="col-sm-6 control-label"><font
+												size="1">Patient Name</font> </label>
+										</div>
+					
+										<div class="form-group">
+											<label for="Patient Age" class="col-sm-5 control-label"><font
+												size="1">Patient Age</font> </label>
+										</div>
+					
+					
+					
+									</div>
+									<hr>
+					
+					
+					
+					
+					
+					
+					
+									<div id="" ng-repeat="medicine in prescription"
+										style="width: 90%; display: block;">
+					
+					
+					
+										<!-- <!-- {{medicine.drugname}} -->
+										-->
+									</div>
+									<div id="inline" style="width: 90%; display: block;">
+										{{selectmedication.drugname}}</div>
+					
+									<div id="inline" style="width: 90%; display: block;">
+										{{selectmedication.adminroute}}</div>
+					
+					
 								</div>
 							</div>
-							
-							<div class="form-group">
-									<label for="route" class="col-sm-4 control-label">Route&nbsp;</label>
-						
-										<div class="col-sm-8">
-											
-			                            <input type="text" ng-model="selectmedication.adminroute" class="form-control" placeholder="route..." >
-			                           
-								</div>
-							</div>
-								
-							
-								<div class="form-group buttons" align="center" style="padding: 8px;">
-								<button type="button" id="addToPaper" ng-click="addDrug()" style="float: right; margin-left: 10px;" 
-			                      	class="btn btn-primary btn-xs" > 
-			                      	 Add
-	                      	</button> 
-						
-					</div>
-								
-								</form>
-							</div>
 						</div>
 					</div>
+					<!-- /#page-wrapper -->
 					
-					<div class="papers col-md-5" style="margin-top: 15px;">
-						<div id="" ng-repeat="medicine in prescription"  style="width: 90%; display: block;">
-							
-							
-							
-							{{medicine.drugname}}
-						</div>
-						<div id="inline" style="width: 90%; display: block;">
-							{{selectmedication.drugname}}
-						</div>
-						
-						<div id="inline" style="width: 90%; display: block;">
-							{{selectmedication.adminroute}}
-						</div>
+					<!-- Custom Theme JavaScript -->
+					<script src="js/sb-admin-2.js"></script>
+					<script>
+					        
+					        $('select').select2({ width : '50%'});
+					function resetTabs(){
+					    $("#content > div").hide(); //Hide all content
+					    $("#tabs a").attr("id",""); //Reset id's      
+					}
 					
-				
-					</div> 
-				</div>
-			</div>
-		</div>
-<!-- /#page-wrapper -->
-
-        <!-- Custom Theme JavaScript -->
-        <script src="js/sb-admin-2.js"></script>
-        <script>
-        
-        $('select').select2({ width : '50%'});
-function resetTabs(){
-    $("#content > div").hide(); //Hide all content
-    $("#tabs a").attr("id",""); //Reset id's      
-}
-
-var myUrl = window.location.href; //get URL
-var myUrlTab = myUrl.substring(myUrl.indexOf("#")); // For mywebsite.com/tabs.html#tab2, myUrlTab = #tab2     
-var myUrlTabName = myUrlTab.substring(0,4); // For the above example, myUrlTabName = #tab
-
-$(document).ready(function() {
-    $("#content > div").hide(); // Initially hide all content
-    $("#tabs li:first a").attr("id","current"); // Activate first tab
-    $("#content > div:first").fadeIn(); // Show first tab content
-    
-    $("#tabs a").on("click",function(e) {
-        e.preventDefault();
-        if ($(this).attr("id") == "current"){ //detection for current tab
-         return       
-        }
-        else{             
-        resetTabs();
-        $(this).attr("id","current"); // Activate this
-        $($(this).attr('name')).fadeIn(); // Show content for current tab
-        }
-    });
-	 $("span.closed").on("click",function(e) {
-        e.preventDefault();
-		var current_tab_li = $(this).closest('li');
-		if($(current_tab_li).find('a').attr("id") == "current"){ //detection for current tab
-			var index = $(current_tab_li).index();
-			if($(current_tab_li).is(':last-child')) {
-				resetTabs();
-				$("#tabs li").eq(index-1).find('a').attr("id","current"); // Activate this
-				$($("#tabs li").eq(index-1).find('a').attr('name')).fadeIn(); // Show content for current tab
-			}else{
-				resetTabs();
-				$("#tabs li").eq(index+1).find('a').attr("id","current"); // Activate this
-				$($("#tabs li").eq(index+1).find('a').attr('name')).fadeIn(); // Show content for current tab
-			}
-		}
-
-		$($(current_tab_li).find('a').attr('name')).fadeOut();
-		$(current_tab_li).fadeOut();
-		$($(current_tab_li).find('a').attr('name')).remove();
-		$(current_tab_li).remove();
-    });
-
-    for (i = 1; i <= $("#tabs li").length; i++) {
-      if (myUrlTab == myUrlTabName + i) {
-          resetTabs();
-          $("a[name='"+myUrlTab+"']").attr("id","current"); // Activate url tab
-          $(myUrlTab).fadeIn(); // Show url tab content        
-      }
-    }
-    $('#addPrescription').on("click",function(e) {
-    	var disease="XYZ";
-    	$('#prescription_main').append('<div class="col-md-12"><ul id="tabs"><li><span class="closed"></span><a href="#">'+disease+'</a></li></ul><div id="content"><div id="tab1"></div></div></div>')
-    });
-    
-   
-});
-</script>
+					var myUrl = window.location.href; //get URL
+					var myUrlTab = myUrl.substring(myUrl.indexOf("#")); // For mywebsite.com/tabs.html#tab2, myUrlTab = #tab2     
+					var myUrlTabName = myUrlTab.substring(0,4); // For the above example, myUrlTabName = #tab
+					
+					$(document).ready(function() {
+					    $("#content > div").hide(); // Initially hide all content
+					    $("#tabs li:first a").attr("id","current"); // Activate first tab
+					    $("#content > div:first").fadeIn(); // Show first tab content
+					    
+					    $("#tabs a").on("click",function(e) {
+					        e.preventDefault();
+					        if ($(this).attr("id") == "current"){ //detection for current tab
+					         return       
+					        }
+					        else{             
+					        resetTabs();
+					        $(this).attr("id","current"); // Activate this
+					        $($(this).attr('name')).fadeIn(); // Show content for current tab
+					        }
+					    });
+						 $("span.closed").on("click",function(e) {
+					        e.preventDefault();
+							var current_tab_li = $(this).closest('li');
+							if($(current_tab_li).find('a').attr("id") == "current"){ //detection for current tab
+								var index = $(current_tab_li).index();
+								if($(current_tab_li).is(':last-child')) {
+									resetTabs();
+									$("#tabs li").eq(index-1).find('a').attr("id","current"); // Activate this
+									$($("#tabs li").eq(index-1).find('a').attr('name')).fadeIn(); // Show content for current tab
+								}else{
+									resetTabs();
+									$("#tabs li").eq(index+1).find('a').attr("id","current"); // Activate this
+									$($("#tabs li").eq(index+1).find('a').attr('name')).fadeIn(); // Show content for current tab
+								}
+							}
+					
+							$($(current_tab_li).find('a').attr('name')).fadeOut();
+							$(current_tab_li).fadeOut();
+							$($(current_tab_li).find('a').attr('name')).remove();
+							$(current_tab_li).remove();
+					    });
+					
+					    for (i = 1; i <= $("#tabs li").length; i++) {
+					      if (myUrlTab == myUrlTabName + i) {
+					          resetTabs();
+					          $("a[name='"+myUrlTab+"']").attr("id","current"); // Activate url tab
+					          $(myUrlTab).fadeIn(); // Show url tab content        
+					      }
+					    }
+					    /* $('#addPrescription').on("click",function(e) {
+					    	var disease="XYZ";
+					    	$('#prescription_main').append('<div class="col-md-12"><ul id="tabs"><li><span class="closed"></span><a href="#">'+disease+'</a></li></ul><div id="content"><div id="tab1"></div></div></div>')
+					    }); */
+					    
+					   
+					});
+					</script>
