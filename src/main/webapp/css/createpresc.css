@@ -131,6 +131,9 @@ label {
     
 }
 
+label {
+    font-size: 12px !important;
+}
 
 .btn-xs, .btn-group-xs>.btn {
   padding: 3px 37px;
@@ -139,11 +142,10 @@ label {
 }
 
 fieldset.with-border {
-	border: 1px groove #A4A4A4 !important;
+	border: none;
 	padding: 20px;
 	width: 100%;
-	margin: 0 0 10px 0 !important;
-	background-color: #dddddd;
+	margin: 22px 0 10px 0 !important;
 	box-shadow: 0 0 10px #999;
 }
 
@@ -154,8 +156,7 @@ legend.with-border {
 	width: auto;
 	border-bottom: none;
 	margin-bottom: 0px;
-	font-size: 14px;
-	color: #fff;
+	font-size: 25px;
+	color: #DA2727;
 	padding: 5px 10px;
-	background: #98AFC7;
 }

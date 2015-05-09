@@ -41,10 +41,10 @@
 				
 				
 			$scope.selected_disease ='';
-		
+		    $scope.readonly = true;
 			
 			$scope.addNewPrescription  = function() {			
-				
+				 $scope.readonly = false;
 				$scope.selected_disease = $("#disease_text").val();
 			}; 	
 		
