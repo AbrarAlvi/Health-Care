@@ -4,49 +4,67 @@
 		 console.log("ambulatoryCtrl  reporting for duty.");	
 		var path =  $location.path();		
 		$scope.patient = {firstName:"Ruhul", lastName:"Mazumder", sex:"Male", age:"32", allergy:["Milk","Nuts","Tea"]};
-		var path =  $location.path();
-		
+		var path =  $location.path();	
 		
 		
 		$scope.prescription =[];
-		$scope.selectmedication = {drugname:'uyiuyiuy'};
+		$scope.selectmedication = {};
 
-		
+		//This function is used to add the form fields to prescription preview
 		$scope.addDrug  = function() {			
 
 			$scope.prescription.push($scope.selectmedication);
 			$scope.selectmedication = {};
-		}; 	
-		
-		$scope.updateInstitute  = function() {
-			instituteService.updateInstitute($scope.institute, $scope);
-		}; 	
-		
-		  $selectedPatient = undefined;
-		  $scope.patients = ['Ruhul Amin' , 'Avrar Alvi' , 'Jabeed Ali', 'Pankaj Pathak', 'Prasant Yadav', 'Rituporna Ray', 'Smatha Sethi'];
-		  $scope.onPatientSelect = function ($item, $model, $label) {
-			 
-			    $scope.$item = $item;
-			    $scope.$model = $model;
-			    $scope.$label = $label;
-			};
 			
-			$selectedDisease = undefined;
-			$scope.diseaselist = ['Cough' , 'Fever' , 'Cholera', 'Anotia', 'Anthrax', 'Ebola'];
-			 $scope.onDiseaseSelect = function ($item, $model, $label) {				 
+			$scope.selected_disease ='';
+		    $scope.readonly = true;
+		    
+		    $scope.formPrescription = {};
+		}; 	
+		
+		
+		//This function is used to reset the form
+		$scope.resetForm = function() {			
+
+			
+			
+			
+		}; 	
+		
+		//This function is used to create a new prescription
+		$scope.selected_disease ='';
+	    $scope.readonly = true;
+		
+		$scope.addNewPrescription  = function() {			
+			 $scope.readonly = false;
+			 $scope.selected_disease = $("#disease_text").val();
+		}; 	
+			
+		
+		//This function is used for Diesese dropdown
+		$selectedDisease = undefined;
+		$scope.diseaselist = ['Cough' , 'Fever' , 'Cholera', 'Anotia', 'Anthrax', 'Ebola'];
+		$scope.onDiseaseSelect = function ($item, $model, $label) {				 
 				    $scope.$item = $item;
 				    $scope.$model = $model;
 				    $scope.$label = $label;
 				};				
 				
 				
-			$scope.selected_disease ='';
-		    $scope.readonly = true;
 			
-			$scope.addNewPrescription  = function() {			
-				 $scope.readonly = false;
-				$scope.selected_disease = $("#disease_text").val();
+			
+			$scope.updateInstitute  = function() {
+				instituteService.updateInstitute($scope.institute, $scope);
 			}; 	
+			
+			  $selectedPatient = undefined;
+			  $scope.patients = ['Ruhul Amin' , 'Avrar Alvi' , 'Jabeed Ali', 'Pankaj Pathak', 'Prasant Yadav', 'Rituporna Ray', 'Smatha Sethi'];
+			  $scope.onPatientSelect = function ($item, $model, $label) {
+				 
+				    $scope.$item = $item;
+				    $scope.$model = $model;
+				    $scope.$label = $label;
+				};
 		
 	} ]);
 	

@@ -45,7 +45,7 @@
 														<div class="col-sm-5">
 															<input type="text" id="medication"
 																class="form-control mandatory alpha" ng-readonly="readonly"
-																placeholder="Enter Medication" />
+																placeholder="Enter medication.." ng-model="selectmedication.medication" />
 														</div>
 														<span class="error-span col-sm-3" style="display: none;"></span>
 													</div>
@@ -61,7 +61,8 @@
 											</label>
 											<div class="col-sm-5">
 												<input type="text" id="dose"
-													class="form-control mandatory alpha" ng-readonly="readonly" placeholder="Enter dose" />
+													class="form-control mandatory alpha" 
+													ng-readonly="readonly" placeholder="Enter dose.." ng-model="selectmedication.doses"/>
 											</div>
 											<span class="error-span col-sm-3" style="display: none;"></span>
 										</div>
@@ -72,7 +73,8 @@
 											</label>
 											<div class="col-sm-5">
 												<input type="text" id="route"
-													class="form-control mandatory alpha" ng-readonly="readonly" placeholder="Enter Route" />
+													class="form-control mandatory alpha" 
+													ng-readonly="readonly" placeholder="Enter route.." ng-model="selectmedication.route" />
 											</div>
 											<span class="error-span col-sm-3" style="display: none;"></span>
 										</div>
@@ -83,7 +85,9 @@
 											</label>
 											<div class="col-sm-5">
 											
-											 <textarea class="form-control" rows="5" id="instruction" ng-readonly="readonly"></textarea>
+											 <textarea class="form-control" rows="5" id="instruction" ng-readonly="readonly"
+											 
+											 ng-model="selectmedication.instruction" placeholder="Enter instruction.."></textarea>
 												
 											</div>
 											<span class="error-span col-sm-3" style="display: none;"></span>
@@ -133,14 +137,26 @@
 					
 					
 					
-										<!-- <!-- {{medicine.drugname}} -->
-										-->
+										{{medicine.medication}} 
+										{{medicine.doses}} 
+										{{medicine.route}} 
+										{{medicine.instruction}} 
+										
+										
 									</div>
 									<div id="inline" style="width: 90%; display: block;">
-										{{selectmedication.drugname}}</div>
+										{{selectmedication.medication}}</div>
 					
 									<div id="inline" style="width: 90%; display: block;">
-										{{selectmedication.adminroute}}</div>
+										{{selectmedication.doses}}</div>
+										
+										<div id="inline" style="width: 90%; display: block;">
+										{{selectmedication.route}}</div>
+										
+										
+										
+										<div id="inline" style="width: 90%; display: block;">
+										{{selectmedication.instruction}}</div>
 					
 					
 								</div>
